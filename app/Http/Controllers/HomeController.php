@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Cliente;
+use App\Models\Produto;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $totalClientes = Cliente::count();
+        $totalProdutos = Produto::count();
+        $valorTotalEstoque = Produto::sum('preco');
+        $ultimosClientes = Cliente::latest()->take(5)->get();
+
+        return view('home', compact(
+            'totalClientes',
+            'totalProdutos',
+            'valorTotalEstoque',
+            'ultimosClientes'
+        ));
     }
 }
