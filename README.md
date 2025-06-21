@@ -1,4 +1,6 @@
-## Testando Rotas Admistrativas ,vendedor-area, cliente-area
+# Sistema de Gestão de Vendas Laravel , MySQLi , JavaScript
+ 
+
 
  
  
@@ -6,29 +8,59 @@
 Um projeto **full-stack** de e-commerce desenvolvido com **Laravel**, **Mysql** e frontend em **JavaScript puro**.  
 
  ```bash
+ Este projeto está em construção e tem como objetivo desenvolver um sistema de gestão de vendas completo. Está sendo desenvolvido com as seguintes tecnologias:
+Laravel (framework PHP para o back-end)
+MySQLi (banco de dados relacional)
+JavaScript (para interações dinâmicas no front-end)
+
  
+```
 
-Email: admin@teste.com
+## Como Executar o Projeto
 
-Senha: senha123
+```bash
+# Instalar as dependências do Laravel
 
-Deve redirecionar para /home ou /dashboard
+composer install
 
-Vendedor
+# .env
+ 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gestao_vendas
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
 
-Email: vendedor@teste.com
+#Gerar a chave da aplicação
 
-Senha: senha123
+php artisan key:generate
 
-Cliente
+#Criar o banco de dados no MySQL
 
-Email: cliente@teste.com
+CREATE DATABASE nome_do_banco;
 
-Senha: senha123
+#Rodar as migrações (criar tabelas no banco)
+
+php artisan migrate
+
+#Iniciar o servidor
+
+php artisan serve
+
+#http://127.0.0.1:8000
+```
+
+## Funcionalidades de Autenticação
+```bash
+
+Login e Registro de Usuários
+Sistema de autenticação seguro com controle de sessões.
+Cadastro de novos usuários com validações.
+Controle de Acesso
+Permissões separadas por tipo de usuário:
+Admin: acesso total ao sistema.
+Vendedor: acesso restrito apenas às funções relacionadas às vendas e clientes
 
 ```
-![teste-rotas-img](https://i.ibb.co/p6ZT8QJf/Screenshot-1.png) 
-![teste-rotas-img](https://i.ibb.co/r2wg4dR5/Screenshot-2.png)
-![teste-rotas-img](https://i.ibb.co/kskcdnLs/Screenshot-3.png) 
-![teste-rotas-img](https://i.ibb.co/qMWhfvVP/Screenshot-4.png) 
-![teste-rotas-img](https://i.ibb.co/VYgxJ489/Screenshot-5.png) 
+![Projeto](https://i.ibb.co/JRp0Q4kj/projeto-laravel.png) 
